@@ -46,8 +46,11 @@ class IbmWatson
 
     public function getSpeechToText($request)
     {
-
-        $this->convertFileToMp3($request);
+        try {
+            $this->convertFileToMp3($request);
+        } catch (\Exception $e) {
+            return 'Something wrong happened.';
+        }
 
         Video::storeMp3($request);
 

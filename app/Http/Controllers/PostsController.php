@@ -27,7 +27,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('posts.show');
+        return view('posts.create');
     }
 
     /**
@@ -92,8 +92,4 @@ class PostsController extends Controller
         return response(null, 204);
     }
 
-    public function search(Request $request)
-    {
-        return Post::search($request->get('search'))->get();
-    }
 }

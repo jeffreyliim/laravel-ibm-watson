@@ -16,7 +16,7 @@
 </head>
 <body>
 <div id="app">
-    <div id="overlay">
+
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -75,7 +75,6 @@
                 </div>
             </div>
         </nav>
-    </div>
     @yield('content')
 </div>
 @yield('modals')
