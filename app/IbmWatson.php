@@ -52,7 +52,10 @@ class IbmWatson
             return 'Something wrong happened.';
         }
 
-        Video::storeMp3($request);
+        \Auth::user()->videos()->create([
+            'path' => '/mp3/',
+            'name' => $request->getClientOriginalName() . '.mp3'
+        ]);
 
         $client = new Client();
         $options = [

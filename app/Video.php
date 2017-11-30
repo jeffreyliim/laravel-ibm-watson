@@ -23,15 +23,14 @@ use Illuminate\Database\Eloquent\Model;
 class Video extends Model
 {
     protected $fillable = [
-        'path', 'name'
+        'path', 'name','message'
     ];
 
 
-    public static function storeMp3($request)
+
+
+    public function user()
     {
-        return static::create([
-            'path' => '/mp3/',
-            'name' => $request->getClientOriginalName() . '.mp3'
-        ]);
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

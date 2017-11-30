@@ -23,6 +23,6 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('posts', PostsController::class);
 
-    Route::post('ibm/personality-traits', 'IbmWatsonController@getPersonalityTraits')->name('personality.get');
-    Route::post('ibm/speech-to-text', 'IbmWatsonController@getSpeechToText')->name('tone.get');
+    Route::post('ibm/personality-traits', 'IbmWatsonController@getPersonalityTraits')->name('personality.post');
+    Route::post('ibm/speech-to-text', 'IbmWatsonController@getSpeechToText')->name('speech.post');
 });
